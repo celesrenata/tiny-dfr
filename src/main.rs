@@ -434,7 +434,8 @@ fn real_main(drm: &mut DrmBackend) {
                     }
                 },
                 Event::Keyboard(KeyboardEvent::Key(key)) => {
-                    if key.key() == Key::Fn as u32 {
+                    const FN_KEYCODE: u32 = 472;
+                    if key.key() == FN_KEYCODE {
                         let new_layer = match key.key_state() {
                             KeyState::Pressed => 1,
                             KeyState::Released => 0
